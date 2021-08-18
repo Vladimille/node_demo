@@ -39,53 +39,6 @@ const ListSchema = new mongoose.Schema({
   }
 })
 
-const SectionSchema = new mongoose.Schema({
-  SectionText: {
-    type: String,
-    required: true
-  },
-  NewsId: {
-    type: Number,
-    required: true
-  },
-  SectionId: {
-    type: Number,
-    required: true
-  }
-})
-
-const CommentSchema = new mongoose.Schema({
-  text: {
-    type: String,
-    required: true
-  },
-  newsId: {
-    type: Number,
-    required: true
-  }
-})
-
-const StarSchema = new mongoose.Schema({
-  newsId: {
-    type: Number,
-    required: true
-  },
-  number: {
-    type: String,
-    required: true
-  }
-})
-
-const star_model = mongoose.model("Star",StarSchema,"star")
-
-const comment_model = mongoose.model("Comment",CommentSchema,"comment")
-
-const section_model = mongoose.model("Section",SectionSchema,"section")
-
-const news_model = mongoose.model("News",NewsSchema,"news")
-
-const login_model = mongoose.model("LoginData",LoginDataSchema,"logindata")
-
 const user_model = mongoose.model("User",UserSchema,"user")
 
 const list_model = mongoose.model("List",ListSchema,"list")
@@ -154,6 +107,8 @@ app.get("/getlist",(req,res) => {
     res.send(200,result)
   })
 })
+//编辑
+app.post()
 
 app.listen(8080, () => {
   console.log("server is running at http://127.0.0.1:8080")
